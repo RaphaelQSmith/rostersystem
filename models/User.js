@@ -1,6 +1,6 @@
-const mongoose = require('./db');
+const mongoose = require('../db');
 
-const TableSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     name:{
         type: String,
         required: true
@@ -16,12 +16,19 @@ const TableSchema = new mongoose.Schema({
         required: true,
         select: false
     },
+    position:{type: String},
+    mon:{type: String},
+    tue:{type: String},
+    wed:{type: String},
+    thu:{type: String},
+    fri:{type: String},
+    sat:{type: String},
+    sun:{type: String},
     createdAt:{
         type: Date,
         default: Date.now
     }
 });
 
-const table = mongoose.model('table', TableSchema);
+module.exports = mongoose.model('User', UserSchema);
 
-module.exports = table;

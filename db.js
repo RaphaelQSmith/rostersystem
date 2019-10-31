@@ -1,8 +1,11 @@
 const mongoose = require('mongoose'); 
+require('dotenv/config');
 
-const uri = 'mongodb://localhost/noderest'
-mongoose.connect(uri, { useNewUrlParser: true })
+// conexão com o banco de dados remoto exemplomlab
 
-mongoose.Promise = global.Promise;
-
-module.exports = mongoose;
+    const uri = process.env.DB_CONNECTION;
+    mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true  })
+    
+    mongoose.Promise = global.Promise;
+    
+    module.exports = mongoose;
