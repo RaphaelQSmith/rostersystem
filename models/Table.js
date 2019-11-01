@@ -2,7 +2,7 @@ const mongoose = require('../db');
 
 const TableSchema = new mongoose.Schema({
     week:{
-        type:String,
+        type: Date,
         required: true,
     },
     ranFM:{

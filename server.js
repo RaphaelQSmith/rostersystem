@@ -5,10 +5,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv/config');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(morgan('dev'));
 
 const userRoutes = require('./routes/user');
 const tableRoutes = require('./routes/tableRoute'); 

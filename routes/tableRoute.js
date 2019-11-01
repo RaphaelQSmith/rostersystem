@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const Table = require('../models/Table'); 
 
-router.get('/', async (req, res)=>{
+router.get('/:id', async (req, res)=>{
     try{
-        const table = await Table.find({});
+        const table = await Table.find({week: req.params.id},{});
         res.json(table);
     }catch(err){
         res.json({message : err})

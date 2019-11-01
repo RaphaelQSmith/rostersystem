@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.7",
+    "morgan": "^1.9.1",
     "nodemon": "^1.19.4"
   }
 }

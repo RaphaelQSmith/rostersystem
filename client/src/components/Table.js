@@ -6,7 +6,8 @@ export class Table extends Component {
     constructor() {
         super();
         this.state = {
-            roster: []
+            roster: [],
+            week: '1010'
         }
     }
 
@@ -17,8 +18,9 @@ export class Table extends Component {
                 format: "dd/mm/yyyy"
             }); 
           });
-
-        await fetch('/tables')
+          const id = this.state.week;
+          const tableUrl = '/tables/' + id;
+        await fetch(tableUrl)
             .then(res => res.json())
             .then(
                 roster => this.setState(
@@ -26,6 +28,7 @@ export class Table extends Component {
     }
 
     render() {        
+
         return (
             <Fragment>
             <div>
@@ -80,7 +83,7 @@ export class Table extends Component {
                 </div>
                 )}
                 <div className="container col s6">
-                            <label>Choose the starting date</label>
+                <blockquote><h6>Choose the starting date</h6></blockquote>
                             <input type="text" class="datepicker" />
                     </div>
                 
