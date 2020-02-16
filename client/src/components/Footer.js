@@ -7,7 +7,7 @@ export class Footer extends Component {
                 
                 <div className="footer-copyright">
                     <div className="container">
-                    ©2019 Design by Raphael Smith
+                        Design by Raphael Smith@2020
                     <a className="grey-text text-lighten-4 right" href="#!">Created with React.js</a>
                     </div>
                 </div>
